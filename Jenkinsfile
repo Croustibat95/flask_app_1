@@ -1,6 +1,9 @@
 
 pipeline {
   agent {
+  triggers {
+      pollSCM('* * * * *')
+  }
     kubernetes {
       // this label will be the prefix of the generated pod's name
       label 'jenkins-agent-flask-app'
